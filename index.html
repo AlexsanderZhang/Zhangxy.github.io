@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{张新宇 Xinyu Zhang}} | 机甲工程师</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0a14;
+      color: #e0f7fa;
+      font-family: 'Exo 2', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Orbitron', monospace;
+      font-size: 3.2rem;
+      color: #00eeff;
+      text-shadow: 0 0 10px rgba(0, 238, 255, 0.7);
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-top: 10px;
+    }
+
+    .glitch {
+      position: relative;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .glitch::before {
+      color: #ff00c8;
+      animation: glitch-anim 2s infinite alternate-reverse;
+      clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+      opacity: 0.8;
+    }
+
+    .glitch::after {
+      color: #00eeff;
+      animation: glitch-anim2 3s infinite alternate-reverse;
+      clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+      opacity: 0.8;
+    }
+
+    @keyframes glitch-anim {
+      0% { transform: translate(0); }
+      20% { transform: translate(-3px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(3px, -2px); }
+      100% { transform: translate(0); }
+    }
+
+    @keyframes glitch-anim2 {
+      0% { transform: translate(0); }
+      20% { transform: translate(2px, -2px); }
+      40% { transform: translate(-2px, 2px); }
+      60% { transform: translate(-3px, -1px); }
+      80% { transform: translate(3px, 1px); }
+      100% { transform: translate(0); }
+    }
+
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border: 3px solid #00eeff;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(0, 238, 255, 0.5);
+    }
+
+    .bio {
+      max-width: 600px;
+      font-size: 1.1rem;
+      color: #d0f0f7;
+    }
+
+    .section-title {
+      font-family: 'Orbitron', monospace;
+      color: #ff00c8;
+      margin: 40px 0 20px;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .skills, .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .skill-tag, .project-card {
+      background: rgba(10, 30, 50, 0.7);
+      border: 1px solid #00aaff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .skill-tag:hover, .project-card:hover {
+      background: rgba(0, 200, 255, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px rgba(0, 200, 255, 0.4);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #00eeff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* 响应式 */
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      .profile { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="glitch" data-text="{{Xinyu Zhang}}">{{Xinyu Zhang}}</h1>
+      <div class="subtitle">{{Ph.d | VLMs | 机甲梦想家}}</div>
+    </header>
+
+    <div class="profile">
+      <img src="{{你的头像链接（建议使用 GitHub 头像或自定义图片 URL）}}" alt="Avatar" class="avatar" />
+      <div class="bio">
+        {{致力于构建下一代智能机器人系统。当VLA真正部署到机器人时，我相信志同道合的你也会感到兴奋。}}
+      </div>
+    </div>
+
+    <h2 class="section-title">🔧 核心技能</h2>
+    <div class="skills">
+      <!-- 示例，请替换为你自己的技能 -->
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">VLM</span>
+      <span class="skill-tag">RL</span>
+      <span class="skill-tag">IL</span>
+    </div>
+
+    <h2 class="section-title">🚀 代表项目</h2>
+    <div class="projects">
+      <a href="{{项目1链接}}" class="project-card">🤖 {{项目1名称}} – {{项目1简述}}</a>
+      <a href="{{项目2链接}}" class="project-card">🌐 {{项目2名称}} – {{项目2简述}}</a>
+      <a href="{{项目3链接}}" class="project-card">⚙️ {{项目3名称}} – {{项目3简述}}</a>
+    </div>
+
+    <h2 class="section-title">📡 联系我</h2>
+    <div class="bio">
+      邮箱：<a href="mailto:{{alexzhangxy11@gmail.com}}">{{alexzhangxy11@gmail.com}}</a><br>
+      GitHub：<a href="https://github.com/{{AlexsanderZhang}}">@{{AlexsanderZhang}}</a><br>
+    </div>
+
+    <footer>
+      <p>© {{2025}} | 本页面由纳米级碳纤维与开源精神锻造而成 💥</p>
+    </footer>
+  </div>
+</body>
+</html>
